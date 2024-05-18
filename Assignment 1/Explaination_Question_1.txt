@@ -1,0 +1,15 @@
+The Needleman-Wunsch algorithm for global sequence alignment, which is often used in bioinformatics to align protein or nucleotide sequences.
+
+1. The function nw(x, y, match=2, mismatch=-3, gap=-1) is defined, where x and y are the sequences to be aligned, and match, mismatch, and gap are the scores for match, mismatch, and gap, respectively.
+
+2. The function initializes two matrices, F and P. F is the scoring matrix, and P is the pointer matrix used to trace back the optimal alignment.
+
+3. The function then fills the matrices using a nested loop. For each cell in the matrix, it calculates the score for match/mismatch (a1), deletion (a2), and insertion (a3), and assigns the maximum of these scores to the cell. It also updates the pointer matrix accordingly.
+
+4. After filling the matrices, it prints the scoring matrix using pandas DataFrame for better visualization.
+
+5. The function then performs the traceback to find all optimal global alignments. It does this iteratively using a stack to avoid recursion. For each cell in the matrix, it starts a traceback until it reaches the top-left cell. During the traceback, it builds the alignment by adding characters or gaps to the sequences.
+
+6. Finally, it prints all optimal global alignments and their scores.
+
+7. The function is then called with two sequences, "GATGCGCAG" and "GGCAGTA", as arguments.
